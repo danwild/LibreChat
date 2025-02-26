@@ -17,6 +17,7 @@ const {
   StructuredWolfram,
   createYouTubeTools,
   TavilySearchResults,
+  IVCAPCrewsAPI,
 } = require('../');
 const { primeFiles: primeCodeFiles } = require('~/server/services/Files/Code/process');
 const { createFileSearchTool, primeFiles: primeSearchFiles } = require('./fileSearch');
@@ -189,6 +190,7 @@ const loadTools = async ({
     'stable-diffusion': StructuredSD,
     'azure-ai-search': StructuredACS,
     traversaal_search: TraversaalSearch,
+    'ivcap-crews': IVCAPCrewsAPI,
     tavily_search_results_json: TavilySearchResults,
   };
 

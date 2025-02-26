@@ -11,6 +11,9 @@ const GoogleSearchAPI = require('./structured/GoogleSearch');
 const TraversaalSearch = require('./structured/TraversaalSearch');
 const TavilySearchResults = require('./structured/TavilySearchResults');
 
+// Add this line to the existing imports
+const IVCAPCrewsAPI = require('./IVCAP');
+
 /** @type {Record<string, TPlugin | undefined>} */
 const manifestToolMap = {};
 
@@ -38,4 +41,5 @@ module.exports = {
   StructuredWolfram,
   createYouTubeTools,
   TavilySearchResults,
+  IVCAPCrewsAPI,
 };

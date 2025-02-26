@@ -1,0 +1,96 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "IVCAP Research Crews API",
+    "description": "Retrieves a list of IVCAP Research Assistant crews (i-crews).",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://develop.ivcap.net"
+    }
+  ],
+  "paths": {
+    "/1/aspects": {
+      "get": {
+        "operationId": "getCrews",
+        "summary": "Get a list of research assistant crews",
+        "description": "Retrieves information about available research assistant crews in the IVCAP platform.",
+        "parameters": [
+          {
+            "name": "schema",
+            "in": "query",
+            "description": "The schema to filter by",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "urn:sd:schema:icrew-crew.1"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of crews to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 15
+            }
+          },
+          {
+            "name": "include-content",
+            "in": "query",
+            "description": "Whether to include content in the response",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "capabilities": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+} 

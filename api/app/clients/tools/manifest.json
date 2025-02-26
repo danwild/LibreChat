@@ -1,5 +1,23 @@
 [
   {
+    "name": "IVCAP Research Crews",
+    "pluginKey": "ivcap-crews",
+    "description": "Retrieves a list of IVCAP Research Assistant crews (ivcap-crews).",
+    "icon": "https://i.imgur.com/ABC123.png",
+    "authConfig": [
+      {
+        "authField": "IVCAP_JWT",
+        "label": "IVCAP JWT Token",
+        "description": "The Bearer token used to authenticate with the IVCAP API."
+      },
+      {
+        "authField": "IVCAP_API_URL",
+        "label": "IVCAP API URL (Optional)",
+        "description": "The URL for the IVCAP Aspects API. Defaults to 'https://develop.ivcap.net/1/aspects' if not provided."
+      }
+    ]
+  },
+  {
     "name": "Traversaal",
     "pluginKey": "traversaal_search",
     "description": "Traversaal is a robust search API tailored for LLM Agents. Get an API key here: https://api.traversaal.ai",

@@ -5,6 +5,7 @@ const GoogleClient = require('./GoogleClient');
 const TextStream = require('./TextStream');
 const AnthropicClient = require('./AnthropicClient');
 const toolUtils = require('./tools/util');
+const IVCAPClient = require('./tools/IVCAP');
 
 module.exports = {
   ChatGPTClient,
@@ -13,5 +14,6 @@ module.exports = {
   GoogleClient,
   TextStream,
   AnthropicClient,
+  IVCAPClient,
   ...toolUtils,
 };
